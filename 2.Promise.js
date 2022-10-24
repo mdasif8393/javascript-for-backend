@@ -10,6 +10,7 @@ const myPromise = new Promise((resolve, reject) => {
         reject("Something went wrong");
     }
 
+    // suppose come data from database
     setTimeout(() => {
         resolve({ name: "John" });
     }, 1000)
@@ -29,8 +30,11 @@ Promise.all(userData).then(res => {
 
 // console.log(userData);
 
+//consume promise
 myPromise
     .then(res => console.log("found in then", res))
     .catch(err => console.log("found in catch", err))
 
 console.log("done");
+
+
